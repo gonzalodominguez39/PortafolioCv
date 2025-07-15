@@ -39,7 +39,6 @@ export const Contact = () => {
 
   return (
     <div className="relative max-w-lg mx-auto bg-gradient-to-br from-emerald-900/90 via-slate-900/95 to-emerald-800/90 p-12 rounded-3xl border-2 border-emerald-500/40 shadow-emerald-400/10 shadow-2xl mt-16 backdrop-blur-xl overflow-hidden">
-      {/* Glow y decoraciones */}
       <div className="absolute -top-10 -left-10 w-40 h-40 bg-emerald-500/20 rounded-full blur-2xl animate-pulse z-0" />
       <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-cyan-400/20 rounded-full blur-2xl animate-pulse z-0" />
       <h2 className="relative z-10 text-4xl font-black text-white mb-10 flex items-center gap-3 tracking-tight drop-shadow-[0_2px_12px_rgba(16,185,129,0.25)]">
@@ -53,7 +52,7 @@ export const Contact = () => {
       ) : (
         <form className="relative z-10 space-y-8" onSubmit={handleSubmit} autoComplete="off">
           <div>
-            <label className="block text-slate-200 font-bold mb-2 tracking-wide text-lg" htmlFor="name">
+            <label className="block text-slate-200 font-bold mb-2 tracking-wide text-lg text-left" htmlFor="name">
               <User className="inline mr-2 text-emerald-400" size={20} />Nombre
             </label>
             <input
@@ -70,7 +69,7 @@ export const Contact = () => {
             />
           </div>
           <div>
-            <label className="block text-slate-200 font-bold mb-2 tracking-wide text-lg" htmlFor="email">
+            <label className="block text-slate-200 font-bold mb-2 tracking-wide text-lg text-left" htmlFor="email">
               <Mail className="inline mr-2 text-emerald-400" size={20} />Email
             </label>
             <input
@@ -87,7 +86,7 @@ export const Contact = () => {
             />
           </div>
           <div>
-            <label className="block text-slate-200 font-bold mb-2 tracking-wide text-lg" htmlFor="message">
+            <label className="block text-slate-200 font-bold mb-2 tracking-wide text-lg text-left" htmlFor="message">
               <MessageSquare className="inline mr-2 text-emerald-400" size={20} />Mensaje
             </label>
             <textarea

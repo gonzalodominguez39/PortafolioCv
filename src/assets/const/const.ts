@@ -1,4 +1,5 @@
 import { Briefcase, Heart, Shield } from 'lucide-react'
+const basePath = import.meta.env.BASE_URL;
 
 export const skills = {
   frontend: [
@@ -15,9 +16,9 @@ export const skills = {
 }
 
 const projectsImages = {
-  Penitenciario: '/sis_penitenciario.png',
-  Blaze: '/sis_blaze.png',
-  Inmobiliaria: './sis_inmobiliaria.png',
+  Penitenciario: `${basePath}sis_penitenciario.png`,
+  Blaze: `${basePath}sis_blaze.png`,
+  Inmobiliaria: `${basePath}sis_inmobiliaria.png`,
 }
 export const projects = [
   {

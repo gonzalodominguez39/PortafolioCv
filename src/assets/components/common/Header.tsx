@@ -23,7 +23,7 @@ export const Header = ({isVisible,activeSection,handleSectionChange}: HeaderProp
   const fullName = 'Gonzalo Dominguez'
   const [displayedName, setDisplayedName] = useState('')
   const [showCursor, setShowCursor] = useState(true)
-  const pdf = '/CV_Dominguez_Gonzalo.pdf'
+ const pdf = import.meta.env.BASE_URL + 'CV_Dominguez_Gonzalo.pdf';
  
   useEffect(() => {
     let currentIndex = 0
@@ -50,7 +50,7 @@ export const Header = ({isVisible,activeSection,handleSectionChange}: HeaderProp
   const handleDownloadCv = () => {
     const link = document.createElement('a')
     link.href = pdf
-    link.download = 'Gonzalo_Dominguez_CV.pdf'
+    link.download = `CV_Dominguez_Gonzalo.pdf`
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)

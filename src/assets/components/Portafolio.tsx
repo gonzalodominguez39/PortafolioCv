@@ -1,4 +1,3 @@
-
 import { useState} from 'react';
 import { Footer } from './common/Footer';
 import { Header } from './common/Header';
@@ -15,6 +14,12 @@ const Portfolio = () => {
 
 const handleSectionChange = (section: string) => {
     setActiveSection(section);
+    // Scroll suave a la sección correspondiente
+    const sectionId = `section-${section}`;
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
   console.log('Active Section:', activeSection);
 
@@ -30,11 +35,11 @@ const handleSectionChange = (section: string) => {
      <Header isVisible={isVisible} activeSection={activeSection} handleSectionChange={handleSectionChange} />
 
       <main className="relative z-10 max-w-7xl mx-auto px-8 pb-16">
-        {activeSection === 'about' && <AboutSection isVisible={isVisible} />}
-        {activeSection === 'skills' && <SkillsSection />}
-        {activeSection === 'projects' && <ProjectsSection isVisible={isVisible} />}
-        {activeSection === 'education' && <EducationSection />}
-        {activeSection === 'contact' && <ContactSection />}
+        <section id="section-about">{activeSection === 'about' && <AboutSection isVisible={isVisible} />}</section>
+        <section id="section-skills">{activeSection === 'skills' && <SkillsSection />}</section>
+        <section id="section-projects">{activeSection === 'projects' && <ProjectsSection isVisible={isVisible} />}</section>
+        <section id="section-education">{activeSection === 'education' && <EducationSection />}</section>
+        <section id="section-contact">{activeSection === 'contact' && <ContactSection />}</section>
       </main>
 
       <Footer/>

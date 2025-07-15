@@ -1,0 +1,13 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* El fondo se maneja con clases Tailwind en los componentes, no en este archivo. Puedes eliminar reglas de fondo aquí si usas Tailwind. */
+
+

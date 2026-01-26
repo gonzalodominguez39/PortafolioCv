@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,22 +46,35 @@ export default function Header() {
                     </motion.div>
 
                     {/* Desktop Menu */}
-                    <ul className="hidden md:flex space-x-8">
-                        {navLinks.map((link) => (
-                            <li key={link.name}>
-                                <motion.a
-                                    href={link.href}
-                                    onClick={(e) => scrollToSection(e, link.href)}
-                                    className="relative text-white/70 hover:text-white transition-colors group pb-2 cursor-pointer font-medium"
-                                    whileHover={{ y: -2 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    {link.name}
-                                    <span className="absolute bottom-0 left-0 w-full h-1 bg-cyan-400 rounded-full origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
-                                </motion.a>
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="hidden md:flex items-center space-x-8">
+                        <ul className="flex space-x-8">
+                            {navLinks.map((link) => (
+                                <li key={link.name}>
+                                    <motion.a
+                                        href={link.href}
+                                        onClick={(e) => scrollToSection(e, link.href)}
+                                        className="relative text-white/70 hover:text-white transition-colors group pb-2 cursor-pointer font-medium"
+                                        whileHover={{ y: -2 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    >
+                                        {link.name}
+                                        <span className="absolute bottom-0 left-0 w-full h-1 bg-cyan-400 rounded-full origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+                                    </motion.a>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <motion.a
+                            href="/GonzaloDominguez_cv.pdf"
+                            download
+                            className="flex items-center gap-2 px-4 py-2 bg-cyan-400/10 text-cyan-400 border border-cyan-400/20 rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 font-medium"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <Download size={18} />
+                            <span>CV</span>
+                        </motion.a>
+                    </div>
 
                     {/* Mobile Menu Button */}
                     <button
@@ -82,20 +95,32 @@ export default function Header() {
                         exit={{ opacity: 0, height: 0 }}
                         className="md:hidden bg-gray-900/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
                     >
-                        <ul className="flex flex-col items-center py-8 space-y-6">
-                            {navLinks.map((link) => (
-                                <li key={link.name}>
-                                    <motion.a
-                                        href={link.href}
-                                        onClick={(e) => scrollToSection(e, link.href)}
-                                        className="text-2xl text-white/80 hover:text-cyan-400 font-bold transition-colors"
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        {link.name}
-                                    </motion.a>
-                                </li>
-                            ))}
-                        </ul>
+                        <div className="flex flex-col items-center py-8 space-y-6">
+                            <ul className="flex flex-col items-center space-y-6">
+                                {navLinks.map((link) => (
+                                    <li key={link.name}>
+                                        <motion.a
+                                            href={link.href}
+                                            onClick={(e) => scrollToSection(e, link.href)}
+                                            className="text-2xl text-white/80 hover:text-cyan-400 font-bold transition-colors"
+                                            whileTap={{ scale: 0.95 }}
+                                        >
+                                            {link.name}
+                                        </motion.a>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <motion.a
+                                href="/GonzaloDominguez_cv.pdf"
+                                download
+                                className="flex items-center gap-2 px-6 py-3 bg-cyan-400 text-black rounded-lg font-bold shadow-lg shadow-cyan-400/20"
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <Download size={20} />
+                                Descargar CV
+                            </motion.a>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

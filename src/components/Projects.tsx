@@ -68,6 +68,7 @@ const projects: Project[] = [
         title: "Sis Blaze",
         description: "Proyecto final de carrera. Aplicación móvil nativa para la gestión inteligente de datos y procesos, optimizada para Android.",
         image: "/sis_blaze.png",
+        link: "https://github.com/gonzalodominguez39/BlazeAPP",
         tags: [
             { name: "Android", icon: <AndroidIcon size={16} /> },
             { name: "Java", icon: <JavaIcon size={16} /> },
@@ -80,6 +81,7 @@ const projects: Project[] = [
         title: "Sistema Penitenciario",
         description: "Sistema robusto de gestión de internos y seguridad, desarrollado con un enfoque en la fiabilidad y la arquitectura escalable.",
         image: "/sis_penitenciario.png",
+        link: "https://github.com/estefanoquiriconi/PP_sistemapenitenciario",
         tags: [
             { name: "Java", icon: <JavaIcon size={16} /> },
             { name: "JavaScript", icon: <JSIcon size={16} /> },
@@ -159,78 +161,93 @@ export default function Projects() {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    {projects.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            variants={itemVariants}
-                            className={`group relative rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 overflow-hidden hover:border-cyan-400/30 transition-all duration-500 flex flex-col h-full ${project.isFeatured ? 'md:col-span-2' : ''}`}
-                        >
-                            {/* Project Image Container */}
-                            <div className={`relative overflow-hidden ${project.isFeatured ? 'h-64 md:h-[450px]' : 'h-56 md:h-64'}`}>
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-gray-950/20 to-transparent opacity-60"></div>
+                    {projects.map((project, index) => {
+                        const CardWrapper = project.link ? 'a' : 'div';
+                        const wrapperProps = project.link ? {
+                            href: project.link,
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className: "block h-full cursor-pointer"
+                        } : { className: "h-full" };
 
-                                {/* Floating Category Tag */}
-                                <div className="absolute top-4 left-4 flex gap-2">
-                                    <div className="px-3 py-1 rounded-full bg-gray-950/50 backdrop-blur-md border border-white/10 text-[10px] md:text-xs font-bold tracking-widest uppercase text-cyan-400">
-                                        {project.category}
-                                    </div>
-                                    {project.isPrivate && (
-                                        <div className="px-3 py-1 rounded-full bg-red-500/20 backdrop-blur-md border border-red-500/30 text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-red-400 flex items-center gap-1">
-                                            <ShieldCheck size={12} />
-                                            Privado
+                        return (
+                            <motion.div
+                                key={index}
+                                variants={itemVariants}
+                                className={`${project.isFeatured ? 'md:col-span-2' : ''} h-full`}
+                            >
+                                <CardWrapper {...(wrapperProps as any)}>
+                                    <div className={`group relative rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 overflow-hidden hover:border-cyan-400/30 hover:bg-white/10 transition-all duration-500 flex flex-col h-full shadow-lg hover:shadow-cyan-400/10`}>
+                                        {/* Project Image Container */}
+                                        <div className={`relative overflow-hidden ${project.isFeatured ? 'h-64 md:h-[450px]' : 'h-56 md:h-64'}`}>
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                            />
+                                            <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-gray-950/20 to-transparent opacity-60"></div>
+
+                                            {/* Floating Category Tag */}
+                                            <div className="absolute top-4 left-4 flex gap-2">
+                                                <div className="px-3 py-1 rounded-full bg-gray-950/50 backdrop-blur-md border border-white/10 text-[10px] md:text-xs font-bold tracking-widest uppercase text-cyan-400">
+                                                    {project.category}
+                                                </div>
+                                                {project.isPrivate && (
+                                                    <div className="px-3 py-1 rounded-full bg-red-500/20 backdrop-blur-md border border-red-500/30 text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-red-400 flex items-center gap-1">
+                                                        <ShieldCheck size={12} />
+                                                        Privado
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {/* External Links - Floating Top Right */}
+                                            <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                {project.github && (
+                                                    <div className="p-2 rounded-full bg-gray-950/50 backdrop-blur-md border border-white/10 text-white hover:bg-cyan-400 hover:text-black transition-all">
+                                                        <Github size={16} />
+                                                    </div>
+                                                )}
+                                                {project.link && (
+                                                    <div className="p-2 rounded-full bg-gray-950/50 backdrop-blur-md border border-white/10 text-white hover:bg-cyan-400 hover:text-black transition-all">
+                                                        <ExternalLink size={16} />
+                                                    </div>
+                                                )}
+                                            </div>
                                         </div>
-                                    )}
-                                </div>
 
-                                {/* External Links - Floating Top Right */}
-                                <div className="absolute top-4 right-4 flex gap-2">
-                                    {project.github && (
-                                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-950/50 backdrop-blur-md border border-white/10 text-white hover:bg-cyan-400 hover:text-black transition-all">
-                                            <Github size={16} />
-                                        </a>
-                                    )}
-                                    {project.link && (
-                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-950/50 backdrop-blur-md border border-white/10 text-white hover:bg-cyan-400 hover:text-black transition-all">
-                                            <ExternalLink size={16} />
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
+                                        <div className="p-6 md:p-8 flex grow flex-col">
+                                            <div className="flex items-center gap-3 mb-4">
+                                                <div className="p-2 rounded-xl bg-white/5 border border-white/10 group-hover:border-cyan-400/50 transition-colors">
+                                                    {project.icon}
+                                                </div>
+                                                <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors flex items-center gap-2">
+                                                    {project.title}
+                                                    {project.link && <ExternalLink size={16} className="opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />}
+                                                </h3>
+                                            </div>
 
-                            <div className="p-6 md:p-8 flex grow flex-col">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="p-2 rounded-xl bg-white/5 border border-white/10">
-                                        {project.icon}
-                                    </div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
-                                        {project.title}
-                                    </h3>
-                                </div>
+                                            <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-6 md:mb-8 grow">
+                                                {project.description}
+                                            </p>
 
-                                <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-6 md:mb-8 grow">
-                                    {project.description}
-                                </p>
-
-                                <div className="flex flex-wrap gap-2 md:gap-3 mt-auto">
-                                    {project.tags.map((tag) => (
-                                        <div
-                                            key={tag.name}
-                                            className="flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:border-cyan-400/50 hover:text-cyan-400 transition-all duration-300"
-                                            title={tag.name}
-                                        >
-                                            {tag.icon}
-                                            <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">{tag.name}</span>
+                                            <div className="flex flex-wrap gap-2 md:gap-3 mt-auto">
+                                                {project.tags.map((tag) => (
+                                                    <div
+                                                        key={tag.name}
+                                                        className="flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 group-hover:border-cyan-400/30 transition-all duration-300"
+                                                        title={tag.name}
+                                                    >
+                                                        {tag.icon}
+                                                        <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">{tag.name}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                                    </div>
+                                </CardWrapper>
+                            </motion.div>
+                        );
+                    })}
                 </motion.div>
             </div>
         </section>

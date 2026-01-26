@@ -188,6 +188,7 @@ export default function AboutMe() {
                 Educación
               </h3>
               <div className="space-y-6">
+
                 <div className="relative pl-6 border-l border-white/10">
                   <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-cyan-400"></div>
                   <h4 className="text-white font-semibold">Prog. Univ. en Informática</h4>
@@ -202,6 +203,11 @@ export default function AboutMe() {
                   <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-cyan-400"></div>
                   <h4 className="text-white font-semibold">Argentina Programa</h4>
                   <p className="text-sm text-cyan-400">Desarrollo Web (2023/24)</p>
+                </div>
+                <div className="relative pl-6 border-l border-white/10">
+                  <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-cyan-400"></div>
+                  <h4 className="text-white font-semibold">Técnico en Informática</h4>
+                  <p className="text-sm text-cyan-400">Escuela Técnica N° 2</p>
                 </div>
               </div>
             </motion.div>

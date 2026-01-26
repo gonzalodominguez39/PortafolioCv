@@ -16,10 +16,9 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
 
-      // Mostrar header cuando se haya scrolleado más del 50% de la altura de la ventana
-      if (scrollPosition > windowHeight * 0.5) {
+      // Mostrar header cuando se haya scrolleado más de 100px
+      if (scrollPosition > 100) {
         setShowHeader(true);
       } else {
         setShowHeader(false);
@@ -111,7 +110,7 @@ function App() {
             </motion.div>
 
             <motion.a
-              href="/GonzaloDominguez_cv.pdf"
+              href="/PortafolioCv/pdf/GonzaloDominguez_cv.pdf"
               download
               className="flex items-center gap-2 px-8 py-3 bg-white/5 backdrop-blur-md text-white font-bold rounded-lg border border-white/10 cursor-pointer hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300 group"
               whileHover={{

@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 .orbitron-font {
-  font-family: "Orbitron";
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-optical-sizing: auto;
-  font-weight: 800;
+  font-weight: 500;
   font-style: normal;
 }
 
 .main-font {
-  font-family: orbitron-font;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 @keyframes slideDown {
@@ -90,14 +90,10 @@
 body {
   background-color: #030712;
   color: #f9fafb;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
 }
 
 .main-font {
-  font-family: 'Orbitron';
-  letter-spacing: -0.02em;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 /* Spotlight effect optimizations */

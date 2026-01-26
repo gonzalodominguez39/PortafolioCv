@@ -95,7 +95,7 @@ export default function Header() {
                         </ul>
 
                         <motion.a
-                            href="/GonzaloDominguez_cv.pdf"
+                            href="/PortafolioCv/pdf/GonzaloDominguez_cv.pdf"
                             download
                             className="flex items-center gap-2 px-4 py-2 bg-cyan-400/10 text-cyan-400 border border-cyan-400/20 rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 font-medium"
                             whileHover={{ scale: 1.05 }}
@@ -165,7 +165,7 @@ export default function Header() {
 
                             <motion.div variants={linkVariants}>
                                 <motion.a
-                                    href="/GonzaloDominguez_cv.pdf"
+                                    href="/PortafolioCv/pdf/GonzaloDominguez_cv.pdf"
                                     download
                                     className="flex items-center gap-2 px-6 py-3 bg-cyan-400 text-black rounded-lg font-bold shadow-lg shadow-cyan-400/20"
                                     whileTap={{ scale: 0.95 }}

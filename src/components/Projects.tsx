@@ -40,7 +40,7 @@ const projects: Project[] = [
     {
         title: "Blaze Vibes",
         description: "Aplicación de música de última generación con una interfaz moderna y fluida para una experiencia de escucha premium.",
-        image: "/BalzeVibes.png",
+        image: "/PortafolioCv/img/BalzeVibes.png",
         link: "https://blaze-vibes.vercel.app/",
         tags: [
             { name: "React", icon: <ReactIcon size={16} /> },
@@ -53,7 +53,7 @@ const projects: Project[] = [
     {
         title: "Drauz Web",
         description: "Plataforma inmobiliaria integral que permite la gestión eficiente de propiedades y contactos con sincronización en tiempo real.",
-        image: "/drauzWeb.png",
+        image: "/PortafolioCv/img/drauzWeb.png",
         link: "https://drauz-web-pnfe.vercel.app/",
         tags: [
             { name: "Next.js", icon: <NextJsIcon size={16} /> },
@@ -67,7 +67,7 @@ const projects: Project[] = [
     {
         title: "Sis Blaze",
         description: "Proyecto final de carrera. Aplicación móvil nativa para la gestión inteligente de datos y procesos, optimizada para Android.",
-        image: "/sis_blaze.png",
+        image: "/PortafolioCv/img/sis_blaze.png",
         link: "https://github.com/gonzalodominguez39/BlazeAPP",
         tags: [
             { name: "Android", icon: <AndroidIcon size={16} /> },
@@ -80,7 +80,7 @@ const projects: Project[] = [
     {
         title: "Sistema Penitenciario",
         description: "Sistema robusto de gestión de internos y seguridad, desarrollado con un enfoque en la fiabilidad y la arquitectura escalable.",
-        image: "/sis_penitenciario.png",
+        image: "/PortafolioCv/img/sis_penitenciario.png",
         link: "https://github.com/estefanoquiriconi/PP_sistemapenitenciario",
         tags: [
             { name: "Java", icon: <JavaIcon size={16} /> },
@@ -93,7 +93,7 @@ const projects: Project[] = [
     {
         title: "Gestión Inmobiliaria Drauz",
         description: "Herramienta interna optimizada para la administración de activos inmobiliarios, con interfaces de usuario intuitivas y alto rendimiento. Sistema desarrollado por encargo para la optimización de flujos de trabajo internos.",
-        image: "/gestionInmobiliaria.png",
+        image: "/PortafolioCv/img/gestionInmobiliaria.png",
         isFeatured: true,
         isPrivate: true,
         tags: [

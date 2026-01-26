@@ -144,7 +144,7 @@ export default function AboutMe() {
                 <div className="absolute inset-0 bg-linear-to-tr from-cyan-500 to-blue-600 rounded-3xl rotate-6 opacity-20 group-hover:rotate-12 transition-transform duration-500"></div>
                 <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/20 bg-gray-900">
                   <img
-                    src="/perfil.png"
+                    src="/PortafolioCv/img/perfil.png"
                     alt="Gonzalo Domínguez"
                     className="w-full h-full object-cover"
                   />

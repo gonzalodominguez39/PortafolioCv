@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 .orbitron-font {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron";
   font-optical-sizing: auto;
-  font-weight: 900;
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -16,6 +16,7 @@
     transform: translateY(-100%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -27,6 +28,7 @@
     transform: translateY(30px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -48,19 +50,59 @@
 }
 
 @keyframes blink {
+
   0%,
   50% {
     opacity: 1;
   }
+
   51%,
   100% {
     opacity: 0;
   }
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.2);
+  border-radius: 10px;
+  border: 2px solid #030712;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.5);
+}
+
+/* Global Styles Refinement */
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+  color: white;
+}
+
+body {
+  background-color: #030712;
+  color: #f9fafb;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+.main-font {
+  font-family: 'Orbitron';
+  letter-spacing: -0.02em;
+}
+
 /* Spotlight effect optimizations */
 .spotlight-overlay {
   will-change: background;
   backface-visibility: hidden;
-  transition: none; /* Deshabilitar transiciones para mejor performance */
+  transition: transform 0.1s ease-out;
 }

@@ -8,7 +8,6 @@ import {
   Phone,
   Github,
   MapPin,
-  ExternalLink,
   ChevronRight,
   BrainCircuit
 } from "lucide-react";
@@ -90,6 +89,13 @@ export default function AboutMe() {
     }
   ];
 
+  const contactInfo = {
+    location: "Santiago del Estero, Argentina",
+    phone: "385-4841095",
+    email: "gonzaloemanuel39@gmail.com",
+    github: "https://github.com/gonzalodominguez39"
+  };
+
   return (
     <section id="about-me" className="relative min-h-screen py-16 md:py-24 overflow-hidden bg-transparent">
       {/* Background Decorative Elements */}
@@ -147,29 +153,34 @@ export default function AboutMe() {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-gray-300 text-lg">
-                  <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                  <div className="p-2 rounded-lg bg-white/5 border border-white/10 shrink-0">
                     <MapPin size={22} className="text-cyan-400" />
                   </div>
-                  <span>Santiago del Estero, Argentina</span>
+                  <span className="font-medium">{contactInfo.location}</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300 text-lg">
-                  <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                  <div className="p-2 rounded-lg bg-white/5 border border-white/10 shrink-0">
                     <Phone size={22} className="text-cyan-400" />
                   </div>
-                  <span>385-4841095</span>
+                  <span className="font-medium">{contactInfo.phone}</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300 text-lg">
-                  <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                  <div className="p-2 rounded-lg bg-white/5 border border-white/10 shrink-0">
                     <Mail size={22} className="text-cyan-400" />
                   </div>
-                  <span>gonzaloemanuel39@gmail.com</span>
+                  <span className="break-all font-medium">{contactInfo.email}</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300 text-lg">
-                  <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                  <div className="p-2 rounded-lg bg-white/5 border border-white/10 shrink-0">
                     <Github size={22} className="text-cyan-400" />
                   </div>
-                  <a href="https://github.com/gonzalodominguez39" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
-                    github.com/gonzalodominguez39
+                  <a
+                    href={contactInfo.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-cyan-400 transition-colors break-all font-medium"
+                  >
+                    {contactInfo.github.replace('https://', '')}
                   </a>
                 </div>
               </div>

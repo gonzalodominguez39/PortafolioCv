@@ -118,7 +118,7 @@ export default function Contact() {
                                 {contact.name}
                             </h3>
 
-                            <p className="text-white font-bold text-lg mb-4">
+                            <p className="text-white font-bold text-lg mb-4 break-all">
                                 {contact.value}
                             </p>
 
